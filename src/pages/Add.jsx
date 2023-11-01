@@ -30,7 +30,7 @@ const Add = () => {
     console.log(car)
   return (
     <div className='form' formEncType='multipart/form-data'>
-        <h1>Add new car</h1>
+        <h1>Add a new car</h1>
         <input type="text" placeholder='title' onChange={handleChange} name="title" />
         <input type="text" placeholder='description' onChange={handleChange} name='description' />
         <input type="number" placeholder='price' onChange={handleChange} name='price' />
