@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import './Add.css'
 const Update = () => {
@@ -13,7 +13,8 @@ const Update = () => {
     })
 
     const navigate = useNavigate()    
-
+    const location = useLocation()
+    const carId = location.pathname.split("/")[2];
     const handleChange = (e) => {
         setCar((prev) => ({...prev, [e.target.name]: e.target.value}))
     }
@@ -21,7 +22,8 @@ const Update = () => {
     const handleClick = async e => {
         e.preventDefault()
         try{
-            await axios.put("https://car-portfolio.onrender.com/cars", car)
+            await axios.put(`https://car-portfolio.onrender.com/cars/${carId}`,car)
+                  
             navigate("/")
         }catch(err){
             console.log(err)
