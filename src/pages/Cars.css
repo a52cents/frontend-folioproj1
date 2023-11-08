@@ -1,5 +1,4 @@
 body{
-    height: 100vh;
     padding: 0px 100px;
     display: 	flex;
     align-items: center;
@@ -9,7 +8,8 @@ body{
 .cars{
 text-align: center;
 align-items: center;
-display: flex;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
 gap: 30px;
 justify-content: center;
 }
@@ -18,12 +18,19 @@ justify-content: center;
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap:10px;
     align-items: center;
+    gap: 2px;
+    margin-top: 6px;
 }
 img{
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 200px;
     object-fit: cover;
-    background-color: aquamarine;
+    background-color: grey;
 }
+
+p{
+    font-size: 12px;
+    
+}
+

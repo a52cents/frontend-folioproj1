@@ -8,7 +8,7 @@ const [cars, setCars] = useState([])
 useEffect(() => {
     const fetchAllCars = async () => {
         try{
-            const res = await axios.get("https://car-portfolio.onrender.com/cars")
+            const res = await axios.get("https://defiant-newt-spacesuit.cyclic.app/cars")
             setCars(res.data)
         }catch(err){
             console.log(err)
@@ -19,7 +19,7 @@ useEffect(() => {
 
     const handleDelete = async (id) => {
         try{
-            const res = await axios.delete(`https://car-portfolio.onrender.com/cars/`+id)
+            const res = await axios.delete(`https://defiant-newt-spacesuit.cyclic.app/cars/`+id)
             window.location.reload()
         }catch(err){
             console.log(err)
@@ -28,17 +28,19 @@ useEffect(() => {
 
   return (
     <>
-    <div>
+    <div className='frame'>
         <h1>Cars</h1>
+        <button className='btn-link'><Link className="link-update" to='/add'>Ajouter une voiture</Link></button>
+
         <div className="cars">
             {cars.map((car) => (
                 <div className="car"  key={car.idcar} >
-                    {car.cover && <img src={car.cover} alt="" />}
+                    {car.cover && <img src={`https://defiant-newt-spacesuit.cyclic.app/upload/${car.cover}`} alt="" />}
                     <h2>{car.title}</h2>
                     <p>{car.description}</p>
                     <p>{car.price} €</p>
-                    <button className="delete" onClick={() => {handleDelete(car.idcar)}}>Delete</button>
-                    <button className="update"><Link to={`/update/${car.idcar}`}>Update</Link></button>
+                    <button className="btn" onClick={() => {handleDelete(car.idcar)}}>Supprimer</button>
+                    <button className="btn-link"><Link className="link-update" to={`/update/${car.idcar}`}>Modifier</Link></button>
 
 
                 </div>
@@ -46,7 +48,6 @@ useEffect(() => {
                 
             ))}
             
-            <button><Link to='/add'>Add new car</Link></button>
         </div>
     </div>
     </>

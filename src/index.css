@@ -36,7 +36,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+.btn {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -44,12 +44,35 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
+.btn-link {
+    display: inline-block;
+    color: white;
+  background-color: #1a1a1a;
+
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .btn-link:hover {
+    border-color: #646cff;
+  }
+
+  .link-update{
+    display: inline-block;
+    padding: 10px 25px;
+  }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
